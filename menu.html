@@ -1,0 +1,140 @@
+<!-- ************************************************************************************* -->
+<!-- Menu Specific JavaScript and JQuery Code -->
+<!-- ************************************************************************************* -->
+<script type="text/javascript">
+    "use strict";
+
+    $(() => { // Document Ready
+
+        let p_module = "home"; // Initial module to load
+        let p_lang = "swe"; // Initial language to load
+
+        $("#menu-content").load("menu/lang-" + p_lang + ".html"); // Load menu list
+        window.setTimeout( ()=> { $("#" + p_module).addClass("menu-active"); }, 20); // View active module in menu
+
+        let MyMenuFunc = { // Main menu module loaders
+            loadPageModule: (event) => {
+                event.preventDefault();
+                $("#" + p_module).removeClass("menu-active");
+                p_module = event.data.module;
+                window.setTimeout( ()=> { $("#" + p_module).addClass("menu-active"); }, 20);
+                // Load content module selected in the menu
+                $(".content").load("modules-" + p_lang + "/" + p_module + ".html");
+            },
+            loadLangMenu: (event) => { // Language selector modules loader
+                event.preventDefault();
+                p_lang = event.data.lang;
+                $("#menu-content").load("menu/lang-" + p_lang + ".html"); // Load language menu
+                window.setTimeout( ()=> { $("#" + p_module).addClass("menu-active"); }, 20);
+                // Load all modules effected by choice of language
+                $(".content").load("modules-" + p_lang + "/" + p_module + ".html");
+                $(".sidebarL").load("sidebars/home-bar-" + p_lang + ".html");
+                $(".sidebarR").load("sidebars/right-bar-" + p_lang + ".html");
+                $(".header").load("elements/header-" + p_lang + ".html");
+                $(".footer").load("elements/footer-" + p_lang + ".html");
+            }
+        };
+
+        // Menu selection event handlers
+        // Main menu listeners...
+        $(document).on('click', 'a[id = "home"]', {module: "home"}, MyMenuFunc.loadPageModule);
+        $(document).on('click', 'a[id = "store_shop"]', {module: "store_shop"}, MyMenuFunc.loadPageModule);
+        $(document).on('click', 'a[id = "store_cat"]', {module: "store_catalogs"}, MyMenuFunc.loadPageModule);
+        $(document).on('click', 'a[id = "workshop"]', {module: "workshop"}, MyMenuFunc.loadPageModule);
+        $(document).on('click', 'a[id = "offers"]', {module: "special_offers"}, MyMenuFunc.loadPageModule);
+        $(document).on('click', 'a[id = "media_film"]', {module: "media_film"}, MyMenuFunc.loadPageModule);
+        $(document).on('click', 'a[id = "media_pict"]', {module: "media_pict"}, MyMenuFunc.loadPageModule);
+        $(document).on('click', 'a[id = "about_us"]', {module: "about_us"}, MyMenuFunc.loadPageModule);
+        $(document).on('click', 'a[id = "about_staff"]', {module: "about_staff"}, MyMenuFunc.loadPageModule);
+        $(document).on('click', 'a[id = "about_map"]', {module: "about_map"}, MyMenuFunc.loadPageModule);
+        $(document).on('click', 'a[id = "contact"]', {module: "contact"}, MyMenuFunc.loadPageModule);
+        $(document).on('click', 'a[id = "news_test"]', {module: "news_test"}, MyMenuFunc.loadPageModule);
+
+        // Language selection event handlers
+        // Flag menu...
+        $(document).on('click', 'img[id = "swedish"]', {lang: "swe"}, MyMenuFunc.loadLangMenu);
+        $(document).on('click', 'img[id = "english"]', {lang: "eng"}, MyMenuFunc.loadLangMenu);
+
+    });
+
+</script>
+
+<!-- ************************************************************************************* -->
+<!-- Menu Specific CSS Style Code -->
+<!-- ************************************************************************************* -->
+<style media="screen" type="text/css">
+
+    .container-menu {
+        display: flex;
+        justify-content: start;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .container-menu > div {
+        padding: 0px;
+        margin: 0px 0px 0px 103px;
+    }
+
+    .bg_style {
+        background: rgb(255,255,255);
+        background: -moz-linear-gradient(top, rgb(255,255,255) 0%, rgb(242,242,242) 50%, rgb(237,237,237) 51%, rgb(255,255,255) 100%);
+        background: -webkit-linear-gradient(top, rgb(255,255,255) 0%,rgb(242,242,242) 50%,rgb(237,237,237) 51%,rgb(255,255,255) 100%);
+        background: linear-gradient(to bottom, rgb(255,255,255) 0%,rgb(242,242,242) 50%,rgb(237,237,237) 51%,rgb(255,255,255) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
+    }
+
+    @media only screen and (max-width: 1050px) {
+
+        .container-menu {
+            display: flex;
+            justify-content: start;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .container-menu > div {
+            padding: 0px;
+            margin: 0px 0px 0px 0px;
+            width: 200px;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+
+        .container-menu {
+            display:flex;
+            justify-content: start;
+            flex-direction: row;
+            flex-wrap: wrap-reverse;
+        }
+
+        .container-menu > div {
+            padding: 0px;
+            margin: 0px 0px 0px 0px;
+            width: 200px;
+        }
+
+}
+
+</style>
+
+<!-- ************************************************************************************* -->
+<!-- Menu HTML code -->
+<!-- ************************************************************************************* -->
+<div class="container-menu bg_style">
+
+    <div style="width:36px; margin:7px 0px 0px 20px;">
+        <img style="cursor:pointer;" id="swedish" src="assets/img/swe_flag.png">
+    </div>
+    <div style="width:36px; margin:7px 0px 0px 5px;">
+        <img style="cursor:pointer;" id="english" src="assets/img/eng_flag.png">
+    </div>
+
+    <div id="menu-content"></div>
+
+</div>
+<!-- ************************************************************************************* -->
+<!-- End of document -->
+<!-- ************************************************************************************* -->

@@ -1,0 +1,139 @@
+<!-- ************************************************************************************* -->
+<!-- Menu list Specific CSS Style Code -->
+<!-- ************************************************************************************* -->
+<style media="screen" type="text/css">
+
+    .navi-hori {
+        display: inline;
+    }
+
+    .navi-vert-left {
+        display: none;
+    }
+
+    .navi-vert-right {
+        display: none;
+    }
+
+
+    @media only screen and (max-width: 1050px) {
+
+        .navi-hori {
+            display: none;
+        }
+
+        .navi-vert-left {
+            display: inline;
+        }
+
+        .navi-vert-right {
+            display: none;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+
+        .navi-hori {
+            display: none;
+        }
+
+        .navi-vert-left {
+            display: none;
+        }
+
+        .navi-vert-right {
+            display: inline;
+        }
+
+    }
+
+</style>
+<!-- ************************************************************************************* -->
+<!-- Menu HTML code -->
+<!-- Language Swedish -->
+<!-- ************************************************************************************* -->
+<nav class="navi navi-hori"> <!-- Horizontal Menu -->
+    <ul>
+        <li><a id="home">Startsida</a></li>
+        <li><a id="store">Butiken &#9663</a>
+        <ul>
+            <li><a id="store_shop">Butiken</a></li>
+            <li><a id="store_cat">Kataloger</a></li>
+        </ul>
+        </li>
+        <li><a id="workshop">Verkstaden</a></li>
+        <li><a id="offers">Erbjudanden</a></li>
+        <li><a id="media">Media-arkiv &#9663</a>
+        <ul>
+            <li><a id="media_film">Filmer</a></li>
+            <li><a id="media_pict">Bilder</a></li>
+        </ul>
+        </li>
+        <li><a id="about">Om oss &#9663</a>
+        <ul>
+            <li><a id="about_us">Företaget</a></li>
+            <li><a id="about_staff">Personalen</a></li>
+            <li><a id="about_map">Hitta hit</a></li>
+            <li><a id="news_test">NewsFeed</a></li>
+        </ul>
+        </li>
+        <li><a id="contact">Kontakt</a></li>
+    </ul>
+</nav>
+
+<nav class="navi navi-vert-left"> <!-- Vertical Left Menu (Dropdown at right) -->
+    <ul>
+        <li><a id="home">Startsida</a></li>
+        <li><a id="store">Butiken &#9657</a>
+        <ul>
+            <li><a id="store_shop">Butiken</a></li>
+            <li><a id="store_cat">Kataloger</a></li>
+        </ul>
+        </li>
+        <li><a id="workshop">Verkstaden</a></li>
+        <li><a id="offers">Erbjudanden</a></li>
+        <li><a id="media">Media-arkiv &#9657</a>
+        <ul>
+            <li><a id="media_film">Filmer</a></li>
+            <li><a id="media_pict">Bilder</a></li>
+        </ul>
+        </li>
+        <li><a id="about">Om oss &#9657</a>
+        <ul>
+            <li><a id="about_us">Företaget</a></li>
+            <li><a id="about_staff">Personalen</a></li>
+            <li><a id="about_map">Hitta hit</a></li>
+        </ul>
+        </li>
+        <li><a id="contact">Kontakt</a></li>
+    </ul>
+</nav>
+
+<nav class="navi navi-vert-right"> <!-- Vertical Right Menu (Dropdown at left) -->
+    <ul>
+        <li><a id="home">Startsida</a></li>
+        <li><a id="store">&#9667 Butiken</a>
+        <ul>
+            <li><a id="store_shop">Butiken</a></li>
+            <li><a id="store_cat">Kataloger</a></li>
+        </ul>
+        </li>
+        <li><a id="workshop">Verkstaden</a></li>
+        <li><a id="offers">Erbjudanden</a></li>
+        <li><a id="media">&#9667 Media-arkiv</a>
+        <ul>
+            <li><a id="media_film">Filmer</a></li>
+            <li><a id="media_pict">Bilder</a></li>
+        </ul>
+        </li>
+        <li><a id="about">&#9667 Om oss</a>
+        <ul>
+            <li><a id="about_us">Företaget</a></li>
+            <li><a id="about_staff">Personalen</a></li>
+            <li><a id="about_map">Hitta hit</a></li>
+        </ul>
+        </li>
+        <li><a id="contact">Kontakt</a></li>
+    </ul>
+</nav>

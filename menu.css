@@ -1,0 +1,121 @@
+/* Main and Side Menus CSS */
+
+:root {
+    --menu-button-color: rgb(255, 255, 255);
+    --menu-button-border-color:rgb(0, 50, 180);
+    --menu-button-border-color-hover:rgb(85, 125, 230);
+	--menu-link-color: rgb(0, 50, 180);
+	--menu-text-color: rgb(24, 24, 24);
+;}
+
+.navi {
+    cursor: pointer;
+}
+
+.navi ul {
+	display: flex;
+	flex: 1;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	list-style: none;
+	margin: 0px;
+    padding: 0px;
+}
+
+.navi ul a {
+	display: block;
+	color: var(--menu-text-color);
+    text-decoration: none;
+    padding: 3px 7px 2px 7px;
+}
+
+.navi ul li {
+	position: relative; /* Necessary for drop down to work */
+	float: left; /* Necessary for drop down to work */
+	flex-grow: 1;
+	text-align: left;
+	white-space: nowrap;
+	margin: 0px;
+	padding: 0px 5px;
+	height: 30px;
+	border: 1px solid #DDD;
+	border-radius: 3px 3px 0px 0px;
+}
+
+.navi ul li.menuitem { /* Set the first menu item to a different color */
+	background: transparent;
+}
+
+.navi ul li a:hover {
+	border-bottom: 2px solid var(--menu-button-border-color-hover);
+}
+
+.navi ul ul {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0px;
+	background: var(--menu-button-color);
+    padding: 0px;
+	box-shadow: 3px 4px 3px rgb(150, 150, 150);
+	z-index: 100;
+}
+
+.navi ul ul li {
+	float: none;
+    width: 140px; /* Dropdown menu width */
+	margin-top: 10px;
+	border: none;
+}
+
+.navi ul ul a {
+	padding: 5px 15px;
+}
+
+.navi ul ul ul {
+	top: 0px;
+	left: 100%;
+}
+
+.navi ul li:hover > ul {
+	display: block;
+}
+
+.menu-active { /* Display the active menu item */
+    border-bottom: 2px solid rgb(0, 50, 180);
+}
+
+@media screen and (max-width: 1050px) {
+	.navi ul {
+		flex-direction: column;
+	}
+
+	.bg_style {
+        border: 1px solid #EEE;
+        border-radius: 7px 7px 0px 0px;
+	}
+
+	.navi ul ul {
+		top: 0px;
+		left: 198px !important;
+  		right: auto !important;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.navi ul {
+		flex-direction: column;
+	}
+
+	.bg_style {
+        border: 1px solid #EEE;
+        border-radius: 7px 7px 0px 0px;
+	}
+
+	.navi ul ul {
+		right: 198px !important; /* Dropdown menu show on left side */
+		left: auto !important; /* Dropdown menu show on left side */
+		/* left: 198px !important;  --> Dropdown menu show on right side
+  		right: auto !important;  --> Dropdown menu show on right side */
+	}
+}

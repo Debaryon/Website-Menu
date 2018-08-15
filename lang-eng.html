@@ -1,0 +1,138 @@
+<!-- ************************************************************************************* -->
+<!-- Menu list Specific CSS Style Code -->
+<!-- ************************************************************************************* -->
+<style media="screen" type="text/css">
+
+    .navi-hori {
+        display: inline;
+    }
+
+    .navi-vert-left {
+        display: none;
+    }
+
+    .navi-vert-right {
+        display: none;
+    }
+
+
+    @media only screen and (max-width: 1050px) {
+
+        .navi-hori {
+            display: none;
+        }
+
+        .navi-vert-left {
+            display: inline;
+        }
+
+        .navi-vert-right {
+            display: none;
+        }
+
+    }
+
+    @media only screen and (max-width: 480px) {
+
+        .navi-hori {
+            display: none;
+        }
+
+        .navi-vert-left {
+            display: none;
+        }
+
+        .navi-vert-right {
+            display: inline;
+        }
+
+    }
+
+</style>
+<!-- ************************************************************************************* -->
+<!-- Menu HTML code -->
+<!-- Language English -->
+<!-- ************************************************************************************* -->
+<nav class="navi navi-hori"> <!-- Horizontal Menu -->
+    <ul>
+        <li><a id="home">Home</a></li>
+        <li><a id="store">Store &#9663</a>
+        <ul>
+            <li><a id="store_shop">The shop</a></li>
+            <li><a id="store_cat">Catalogs</a></li>
+        </ul>
+        </li>
+        <li><a id="workshop">Workshop</a></li>
+        <li><a id="offers">Offers</a></li>
+        <li><a id="media">Media archive &#9663</a>
+        <ul>
+            <li><a id="media_film">Films</a></li>
+            <li><a id="media_pict">Pictures</a></li>
+        </ul>
+        </li>
+        <li><a id="about">About us &#9663</a>
+        <ul>
+            <li><a id="about_us">The company</a></li>
+            <li><a id="about_staff">The staf</a></li>
+            <li><a id="about_map">Where are we?</a></li>
+        </ul>
+        </li>
+        <li><a id="contact">Contact</a></li>
+    </ul>
+</nav>
+
+<nav class="navi navi-vert-left"> <!-- Vertical Left Menu (Dropdown at right) -->
+    <ul>
+        <li><a id="home">Home</a></li>
+        <li><a id="store">Store &#9657</a>
+        <ul>
+            <li><a id="store_shop">The shop</a></li>
+            <li><a id="store_cat">Catalogs</a></li>
+        </ul>
+        </li>
+        <li><a id="workshop">Workshop</a></li>
+        <li><a id="offers">Offers</a></li>
+        <li><a id="media">Media archive &#9657</a>
+        <ul>
+            <li><a id="media_film">Films</a></li>
+            <li><a id="media_pict">Pictures</a></li>
+        </ul>
+        </li>
+        <li><a id="about">About us &#9657</a>
+        <ul>
+            <li><a id="about_us">The company</a></li>
+            <li><a id="about_staff">The staf</a></li>
+            <li><a id="about_map">Where are we?</a></li>
+        </ul>
+        </li>
+        <li><a id="contact">Contact</a></li>
+    </ul>
+</nav>
+
+<nav class="navi navi-vert-right"> <!-- Vertical Right Menu (Dropdown at left) -->
+    <ul>
+        <li><a id="home">Home</a></li>
+        <li><a id="store">&#9667 Store</a>
+        <ul>
+            <li><a id="store_shop">The shop</a></li>
+            <li><a id="store_cat">Catalogs</a></li>
+        </ul>
+        </li>
+        <li><a id="workshop">Workshop</a></li>
+        <li><a id="offers">Offers</a></li>
+        <li><a id="media">&#9667 Media archive</a>
+        <ul>
+            <li><a id="media_film">Films</a></li>
+            <li><a id="media_pict">Pictures</a></li>
+        </ul>
+        </li>
+        <li><a id="about">&#9667 About us</a>
+        <ul>
+            <li><a id="about_us">The company</a></li>
+            <li><a id="about_staff">The staf</a></li>
+            <li><a id="about_map">Where are we?</a></li>
+        </ul>
+        </li>
+        <li><a id="contact">Contact</a></li>
+    </ul>
+</nav>
